@@ -1,0 +1,81 @@
+﻿@model About
+@{
+    ViewData["Title"] = "EditAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <h4 class="mb-4">Hakkımda </h4>
+ 
+        <form asp-action="EditAbout" method="post">
+        <input type="hidden" asp-for="AboutID" />
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Başlık</label>
+            <input asp-for="Title" class="form-control" placeholder="Örnek: Yazılım Geliştirici" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Açıklama</label>
+            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Kendinizi tanıtan bir açıklama yazın..."></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SubDesc" class="form-label">Alt Açıklama</label>
+            <input asp-for="SubDesc" class="form-control" placeholder="Örnek: Freelance çalışıyorum." />
+            <span asp-validation-for="SubDesc" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Birthday" class="form-label">Doğum Tarihi</label>
+                <input asp-for="Birthday" type="date" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="05xx xxx xx xx" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label asp-for="City" class="form-label">Şehir</label>
+                <input asp-for="City" class="form-control" placeholder="İstanbul" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Age" class="form-label">Yaş</label>
+                <input asp-for="Age" class="form-control" min="0" max="100" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Degree" class="form-label">Derece</label>
+                <select asp-for="Degree" class="form-select">
+                    <option value="">Seçiniz</option>
+                    <option value="lise">Lise</option>
+                    <option value="önlisans">Önlisans</option>
+                    <option value="lisans">Lisans</option>
+                    <option value="yükseklisans">Yüksek Lisans</option>
+                    <option value="doktora">Doktora</option>
+                </select>
+                <span asp-validation-for="Degree" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" placeholder="ornek@mail.com" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
+
+

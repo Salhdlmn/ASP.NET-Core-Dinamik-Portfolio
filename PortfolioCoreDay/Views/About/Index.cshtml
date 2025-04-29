@@ -1,0 +1,36 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <h4 class="mb-4">Hakkımda Bilgileri</h4>
+
+    <div class="card shadow-sm mb-5">
+        @foreach (var item in Model)
+        {
+        <div class="card-body">
+            <h5 class="card-title">@item.Title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@item.SubDesc</h6>
+            <p class="card-text">@item.Description</p>
+
+            <ul class="list-group list-group-flush mt-4">
+                <li class="list-group-item"><strong>Doğum Tarihi:</strong> @item.Birthday.ToString("dd.MM.yyyy")</li>
+                <li class="list-group-item"><strong>Telefon:</strong> @item.PhoneNumber</li>
+                <li class="list-group-item"><strong>Şehir:</strong> @item.City</li>
+                <li class="list-group-item"><strong>Yaş:</strong> @item.Age</li>
+                <li class="list-group-item"><strong>Email:</strong> @item.Email</li>
+                <li class="list-group-item"><strong>Eğitim Derecesi:</strong> @item.Degree</li>
+            </ul>
+
+            <div class="mt-4 text-end">
+                    <a href="/About/EditAbout/@item.AboutID" class="btn btn-primary">Güncelle</a>
+            </div>
+        </div>
+            
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,43 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h3 class="mb-4">İletişim Bilgileri</h3>
+
+    @foreach (var item in Model)
+    {
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i> @item.Adress</h5>
+
+                <p class="mb-1">
+                    <strong>Telefon:</strong> @item.PhoneNumber
+                </p>
+                <p class="mb-1">
+                    <strong>Email:</strong> @item.Email
+                </p>
+
+                <p class="mb-1">
+                    <strong>Koordinatlar:</strong> @item.Latitude, @item.Longitude
+                </p>
+
+                <div class="ratio ratio-16x9 mt-3 mb-3">
+                    <iframe src="https://maps.google.com/maps?q=@(item.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)),@(item.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture))&hl=tr&z=14&output=embed"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                    </iframe>
+                </div>
+                <a asp-action="EditContact" asp-controller="Contact" asp-route-id="@item.ContactID" class="btn btn-primary">
+                    Güncelle
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+

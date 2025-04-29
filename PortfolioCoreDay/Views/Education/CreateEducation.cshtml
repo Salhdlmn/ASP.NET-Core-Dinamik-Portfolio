@@ -1,0 +1,41 @@
+﻿@model Education
+@{
+    ViewData["Title"] = "CreateEducation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Eğitimler</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Eğitim Listesi</div>
+					</div>
+					<div class="card-body">
+
+						<form method="post">
+							<label>Bölüm Bilgisi</label>
+							<input type="text" asp-for="Title" class="form-control border border-dark rounded-3 p-2 " />
+							<br />
+							<label>Üniversite Bilgisi</label>
+							<input type="text" asp-for="University" class="form-control border border-dark rounded-3 p-2" />
+							<br />
+							<label>Fakülte Bilgisi</label>
+							<input type="text" asp-for="Department" class="form-control border border-dark rounded-3 p-2" />
+							<br />
+							<label>Tarih Aralığı</label>
+							<input type="text" asp-for="EducationDate" class="form-control border border-dark rounded-3 p-2" />
+							<br />
+						
+							<button class="btn btn-primary">Eğitim Ekle</button>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model List<Category>
+<section id="portfolio" class="portfolio section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Çalışmalarım</h2>
+        <p>Kendi çalışmasını yaptığım projelerin görsellerine aşağıdan ulaşabilirsiniz.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">Tümü</li>
+               @foreach (var item in Model)
+                {                    
+                <li data-filter=".category-@item.CategoryID">@item.CategoryName</li>
+                }
+            </ul><!-- End Portfolio Filters -->
+            @await Component.InvokeAsync("_DefaultMyProjectsComponentPartial")
+
+            <!-- End Portfolio Container -->
+
+        </div>
+
+    </div>
+
+</section>

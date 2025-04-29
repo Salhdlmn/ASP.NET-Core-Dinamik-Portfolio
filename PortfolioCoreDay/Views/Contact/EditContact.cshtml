@@ -1,0 +1,47 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "EditContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="container mt-5">
+    <h3 class="text-primary mb-4">İletişim Bilgilerini Güncelle</h3>
+
+    <form asp-action="EditContact" method="post" class="row g-3">
+        <input type="hidden" asp-for="ContactID" />
+
+        <div class="col-md-6">
+            <label asp-for="Adress" class="form-label">Adres</label>
+            <input asp-for="Adress" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="PhoneNumber" class="form-label">Telefon</label>
+            <input asp-for="PhoneNumber" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="col-md-3">
+            <label asp-for="Latitude" class="form-label">Latitude</label>
+            <input asp-for="Latitude" class="form-control" />
+        </div>
+
+        <div class="col-md-3">
+            <label asp-for="Longitude" class="form-label">Longitude</label>
+            <input asp-for="Longitude" class="form-control" />
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">İptal</a>
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,33 @@
+﻿@model Message
+<div class="col-lg-7">
+    <form asp-action="SendMessage" asp-controller="Contact" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <label for="name-field" class="pb-2">İsim Soyisim</label>
+                <input type="text" asp-for="NameSurname"  class="form-control" required="">
+            </div>
+
+            <div class="col-md-6">
+                <label for="email-field" class="pb-2">Email</label>
+                <input type="email" asp-for="Email" class="form-control"  id="email-field" required="">
+            </div>
+
+            <div class="col-md-12">
+                <label for="subject-field" class="pb-2">Konu</label>
+                <input type="text" asp-for="Subject" class="form-control" id="subject-field" required="">
+            </div>
+
+            <div class="col-md-12">
+                <label for="message-field" class="pb-2">Message</label>
+                <textarea class="form-control" asp-for="MessageDetail" rows="10" id="message-field" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center"> 
+
+                <button type="submit">Send Message</button>
+            </div>
+
+        </div>
+    </form>
+</div><!-- End Contact Form -->

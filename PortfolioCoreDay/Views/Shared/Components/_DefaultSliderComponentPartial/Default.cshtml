@@ -1,0 +1,16 @@
+﻿      @model List<MyWork>
+<section id="hero" class="hero section dark-background">
+
+    <img src="/iPortfolio-1.0.0/assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Salih Dilmen</h2>
+   @{
+            var isler = string.Join(", ", Model.Select(item => item.MyWorkName));
+   }
+
+        <p>İşlerim: <span class="typed" data-typed-items="@isler"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+    
+    </div>
+
+</section><!-- /Hero Section -->
